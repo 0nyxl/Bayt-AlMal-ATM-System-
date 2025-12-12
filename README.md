@@ -8,17 +8,16 @@ This project is ideal for developers learning **C++ file I/O**, **robust input v
 
 ---
 
-### 📋 Features
+### 📋 Key System Features
 
-| Feature | Description | Status |
+| Feature | Description | Operational Impact |
 | :--- | :--- | :--- |
-| **Secure Authentication** | Login using Account Number and PIN Code. | Complete |
-| **Transaction Integrity** | **Critical:** Implements a **reload-then-save** mechanism to guarantee the data file is never corrupted by stale data. | Hardened |
-| **Withdrawal Options** | Includes **Quick Withdraw** (predefined amounts) and **Normal Withdraw** (custom amounts). | Complete |
-| **Deposit Funds** | Allows positive whole dollar deposits. | Complete |
-| **Real-Time Balance** | Retrieves the absolute latest balance directly from the data file for the current session. | Complete |
-| **Input Robustness** | Comprehensive error checking against non-numeric, negative, or invalid transaction amounts (e.g., non-multiples of 5). | Hardened |
-| **Data Storage** | Stores all client records in a structured text file (e.g., `Gringotts_Vaults.txt`). | Complete |
+| **Authentication & Access Control** | Client access secured via credential validation (Account Number and PIN Code) against the data vault. | Ensures user identity and prevents unauthorized access to transactions. |
+| **Data Integrity Assurance** | **CRITICAL:** Employs a **Synchronous Reload-Modify-Save** workflow to prevent data loss or corruption due to concurrent operations.  | Guarantees the transactional integrity and auditability of the financial ledger. |
+| **Withdrawal Compliance** | Transaction rules strictly enforced: amounts must be positive, available in the balance, and compliant with cash denomination standards (multiples of 5). | Maintains balance accuracy and adherence to defined business rules. |
+| **Input Stabilization** | Includes extensive input validation, type checking, and buffer management across all user interaction points. | Eliminates program instability and crashes from non-numeric or malformed input. |
+| **Real-Time Data Refresh** | Client balance is updated and validated directly from the persistent storage prior to display or transaction execution. | Provides verified, real-time balance information to the user. |
+| **Persistence Layer** | Account data is managed via structured, plain-text delimiter-separated file I/O (`fstream`). | Enables durable, persistent, and auditable record keeping. |
 
 ---
 
